@@ -1,0 +1,5 @@
+#!/bin/sh
+rm -rf ../python3-ioc_*
+rm -rf ../python-ioc_*
+dpkg-buildpackage -rfakeroot -b
+dpkg -c ../python3-ioc_*.deb

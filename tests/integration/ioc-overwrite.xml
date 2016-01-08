@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ioc version="1">
+  <provision class="constant" name="constant.scalar.int" source="int" value="2"/>
+</ioc>
+<!-- vim: set syntax=xml sw=2 ts=2: -->

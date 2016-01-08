@@ -1,0 +1,20 @@
+#!/bin/sh
+set +e
+rm -rf .coverage
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+MIN_PERCENTAGE=100
+echo "Working directory: $SCRIPTPATH"
+export PYTHONPATH="$SCRIPTPATH:$PYTHONPATH"
+coverage3 run -m nose --cover-package=ioc -w tests -x && \
+coverage3 report --include=ioc/* \
+    --omit "./tests/*" \
+    --omit "./ioc/test/*" \
+    --fail-under $MIN_PERCENTAGE -m
+
+coverage2 run -m nose --cover-package=ioc -w tests && \
+coverage2 report --include=ioc/* \
+    --omit "./tests/*" \
+    --omit "./ioc/test/*" \
+    --fail-under $MIN_PERCENTAGE -m
+

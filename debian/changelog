@@ -1,0 +1,29 @@
+python-ioc (1.1.0-ubuntu3) stable; urgency=medium
+
+  * Reprepro whining.
+
+ -- Sousou Industries Releases <releases@sousouindustries.com>  Sat, 31 Oct 2015 15:25:20 +0100
+
+python-ioc (1.1.0-ubuntu2) stable; urgency=medium
+
+  * Fix parsing error with provisions of type "constant"
+
+ -- Sousou Industries Releases <releases@sousouindustries.com>  Sat, 31 Oct 2015 15:18:49 +0100
+
+python-ioc (1.1.0-ubuntu1) stable; urgency=medium
+
+  * Stable release.
+
+ -- Sousou Industries Releases <releases@sousouindustries.com>  Thu, 29 Oct 2015 13:40:00 +0100
+
+python-ioc (1.0.0rc1-ubuntu6) unstable; urgency=medium
+
+  * Added rudimentary feature of importing by XML file.
+
+ -- Sousou Industries Releases <releases@sousouindustries.com>  Sun, 25 Oct 2015 15:27:54 +0100
+
+python-ioc (1.0.0rc1-ubuntu5) stable; urgency=medium
+
+  * Fix multiple declarations overwritting each other.
+
+ -- Sousou Industries Releases <releases@sousouindustries.com>  Tue, 06 Oct 2015 16:57:02 +0200

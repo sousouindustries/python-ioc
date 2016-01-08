@@ -1,0 +1,20 @@
+Source: python-ioc
+Section: python
+Priority: optional
+Maintainer: Sousou Industries Releases <releases@sousouindustries.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: https://www.sousouindustries.com
+
+
+Package: python-ioc
+Architecture: all
+Depends: python-six
+X-Python-Version: >= 2.7
+Description: Python 2 IoC Framework
+
+Package: python3-ioc
+Architecture: all
+Depends: python3-six
+X-Python-Version: >= 3.0
+Description: Python 3 IoC Framework

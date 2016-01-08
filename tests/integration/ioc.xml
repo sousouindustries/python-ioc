@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Specifies the implementations for dependencies. Provisions are processed
+in the order they are specified in this file. -->
+<ioc version="1">
+  <!-- An internal dependency that is not exposed to consumers -->
+  <provision class="function" visible="internal" name="internal_function" source="ioc.test.test_function"/>
+  <provision class="instance" visible="internal" name="internal_instance" source="ioc.test.test_instance">
+    <!-- Below are defined the arguments for the instance constructor.
+      Arguments come in two flavors: literal and provided. A literal
+      or a provided one. Literal arguments are literals contained in the `value`
+      attribute of the `parameter` element. They can optionally be casted to a
+      certain datatype by specifying the "type" attribute. The value of this
+      attribute MUST be in __builtins__, or a valid import path (<module path>.<attname>).
+
+      Arguments of type "provided" refer to an internal dependency.
+    -->
+    <param class="literal">foo</param>
+    <param class="literal" source="int">1</param>
+
+    <!-- This is a named argument. It will be passed to the constructor in **kwargs.
+    Literal is implied. -->
+    <param name="bar">bar</param>
+
+    <!-- This argument uses an internal dependency"-->
+    <param name="baz" class="provided" source="baz">internal_function</param>
+  </provision>
+
+  <!-- A constant (scalar) -->
+  <provision class="constant" name="constant.scalar.str" source="str" value="foo"/>
+  <provision class="constant" name="constant.scalar.str_without_source" value="foo"/>
+  <provision class="constant" name="constant.scalar.int" source="int" value="1"/>
+  <provision class="constant" name="constant.scalar.boolean" source="bool" value="false"/>
+
+  <!-- A constant (list). -->
+  <provision class="constant" name="constant.composite.list" source="list">
+    <member>1</member>
+    <member source="int">2</member><!-- this member will be coerced to string -->
+    <member>3</member>
+  </provision>
+
+  <!-- A dictionary holding three members. -->
+  <provision class="constant" name="constant.composite.dict" source="dict">
+    <member name="foo">1</member>
+    <member source="int" name="bar">2</member>
+    <member name="baz">3</member>
+  </provision>
+</ioc>
+<!-- vim: set syntax=xml sw=2 ts=2: -->
